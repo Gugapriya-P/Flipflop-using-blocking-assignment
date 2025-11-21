@@ -20,6 +20,7 @@ T FF
 
 ## RTL Code:
 ## D FF
+```
 module DFF(clk,rst,d,dout);
 input clk,rst,d;
 output reg dout;
@@ -31,8 +32,9 @@ else
 dout=d;
 end
 endmodule
-
+```
 ## T FF
+```
 module TFF(clk,rst,T,Tout);
 input clk,rst,T;
 output reg Tout;
@@ -46,8 +48,9 @@ else
 Tout=Tout;
 end 
 endmodule
-
+```
 ## SR FF
+```
 module SRFF (input clk,input S,input R,output reg Q);
 always @(posedge clk)
  begin
@@ -59,8 +62,9 @@ always @(posedge clk)
  endcase
  end
 endmodule
-
+```
 ## JF FF
+```
 module JKFF(input clk,J,K, output reg Q);
 always @(posedge clk) begin
 case({J,K})
@@ -71,9 +75,10 @@ case({J,K})
 endcase
 end
 endmodule
-
+```
 ## TestBench:
 ## D FF
+```
 module DFF_TB;
 reg clk_t,rst_t,d_t;
 wire dout_t;
@@ -92,9 +97,10 @@ always
 #10
 clk_t=~clk_t;
 endmodule
-
+```
 
 ## T FF
+```
 module TFF_TB;
 reg clk_t,rst_t,T_t;
 wire Tout_t;
@@ -113,8 +119,9 @@ begin
     #10 
 clk_t=~clk_t;  
 endmodule 
-
+```
 ## SR FF
+```
 module SRFF_TB;
   reg clk, S, R;
   wire Q;
@@ -132,8 +139,9 @@ module SRFF_TB;
     #100 S = 0; R = 0;
  end
 endmodule
-
+```
 ## JK FF
+```
 module JKFF_TB;
   reg clk;
   reg J, K;
@@ -154,7 +162,7 @@ initial begin
     #100 J=1; K=1;  
 end
 endmodule
-
+```
 ## Output waveform:
 ## D FF
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/a535f0be-d629-4595-847a-cf595cd1147e" />
